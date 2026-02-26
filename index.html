@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
 :root {
   --blue:    #1B3FE6;
@@ -35,6 +35,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* ===================== LOGO CSS ===================== */
@@ -108,6 +110,8 @@ nav {
   border-bottom: 1px solid var(--border);
   z-index: 999;
   transition: box-shadow .3s;
+  width: 100%;
+  box-sizing: border-box;
 }
 nav.scrolled { box-shadow: 0 2px 20px rgba(2,6,23,.06); }
 
@@ -138,6 +142,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(2,6,23,.06); }
   position: fixed; top: var(--nav-h); left: 0; right: 0;
   background: var(--white); border-bottom: 1px solid var(--border);
   z-index: 998;
+  width: 100%;
+  box-sizing: border-box;
 }
 .mob-menu a {
   padding: 16px 6%; font-size: .9rem; font-weight: 500;
@@ -149,8 +155,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(2,6,23,.06); }
 .mob-menu.open { display: flex; }
 
 /* UTILITIES */
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 6%; }
-section { padding: 100px 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 6%; width: 100%; box-sizing: border-box; }
+section { padding: 100px 0; width: 100%; box-sizing: border-box; }
 
 .eyebrow {
   display: inline-block;
@@ -204,10 +210,12 @@ section { padding: 100px 0; }
 /* HERO */
 #hero {
   min-height: 100vh;
+  width: 100%;
   background: var(--night);
   display: flex; align-items: center;
   padding-top: var(--nav-h);
   position: relative; overflow: hidden;
+  box-sizing: border-box;
 }
 #hero::before {
   content: '';
@@ -1254,7 +1262,7 @@ footer { background: var(--ink); padding: 72px 0 32px; }
 </script>
 
 <!-- PERSPECTIVES FULL-PAGE OVERLAY -->
-<div id="perspectivesOverlay" style="display:none;position:fixed;inset:0;z-index:9999;background:#fff;overflow-y:auto;">
+<div id="perspectivesOverlay" style="display:none;position:fixed;inset:0;z-index:9999;background:#fff;overflow-y:auto;overflow-x:hidden;width:100%;box-sizing:border-box;">
 <style>
 .persp-overlay-nav {
   position: sticky; top: 0; z-index: 10;
@@ -1262,6 +1270,7 @@ footer { background: var(--ink); padding: 72px 0 32px; }
   border-bottom: 1px solid #CBD5E1;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 6%; height: 68px;
+  width: 100%; box-sizing: border-box;
 }
 .persp-close-btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -1273,13 +1282,14 @@ footer { background: var(--ink); padding: 72px 0 32px; }
 .persp-close-btn:hover { border-color: #1B3FE6; color: #1B3FE6; }
 .persp-hero-section {
   background: #0F172A; padding: 80px 0 64px; position: relative; overflow: hidden;
+  width: 100%; box-sizing: border-box;
 }
 .persp-hero-section::before {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(99,102,241,.18) 0%, transparent 70%);
   pointer-events: none;
 }
-.persp-wrap { max-width: 1160px; margin: 0 auto; padding: 0 6%; position: relative; }
+.persp-wrap { max-width: 1160px; margin: 0 auto; padding: 0 6%; position: relative; width: 100%; box-sizing: border-box; }
 .persp-eyebrow {
   display: inline-block; font-size: .65rem; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
